@@ -1,4 +1,3 @@
-background(255, 255, 255);
 let x = 100;
 let y = 100;
 let gameState = "start";
@@ -43,8 +42,9 @@ let lostY = 600;
 
 function setup() {
   createCanvas(750, 900);
+  background(255, 255, 255);
 }
-
+background(255, 255, 255);
 //Shown to me by my friend, Armando Rossmann
 //Images used in the game
 function preload() {
