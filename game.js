@@ -1,6 +1,6 @@
 let x = 100;
 let y = 100;
-let gameState = "start";
+let state = "start";
 let direction = "forward";
 let gameActive = true;
 let manY = 0;
@@ -281,10 +281,10 @@ function keyPressed() {
 
 function draw() {
   //GAMESTATES
-  if (gameState === "start") {
+  if (state === "start") {
     backgroundEffects(x - 100, 0, swampX, swampY);
     startText(x - 60, 70, startX, startY);
-  } else if (gameState === "game") {
+  } else if (State === "game") {
     backgroundEffects(x - 100, 0, swampX, swampY);
 
     push();
@@ -312,18 +312,18 @@ function draw() {
       yVelocity = yVelocity + gravity;
       if (manY > groundLevel && yVelocity > 3) {
         gameActive = false;
-        gameState = "lost";
+        state = "lost";
       } else if (manY > groundLevel && yVelocity <= 3) {
         gameActive = false;
-        gameState = "won";
+        state = "won";
       }
     }
-  } else if (gameState === "won") {
+  } else if (state === "won") {
     backgroundEffects(x - 100, 0, swampX, swampY);
     push();
     image(wonImage, x + 30, 50, winX, winY);
     frontWater(x - 99, 537, waterX, waterY);
-  } else if (gameState === "lost") {
+  } else if (state === "lost") {
     backgroundEffects(x - 100, 0, swampX, swampY);
     lostText(x + 30, 50, lostX, lostY);
     frontWater(x - 99, 537, waterX, waterY);
@@ -333,8 +333,8 @@ function draw() {
 //inspred by Garrit's "Switching through different states" example video
 //Switching between states and reset
 function mousePressed() {
-  if (gameState === "start") {
-    gameState = "game";
+  if (state === "start") {
+    state = "game";
     gameActive = true;
     manY = 0;
     gatorLeftRotation = 320;
@@ -352,10 +352,10 @@ function mousePressed() {
     jumpStrength = -0.8; // Initial jumping force
     groundLevel = 700; // Ground position
     jumpBoost = -5;
-  } else if (gameState === "lost") {
-    gameState = "start";
-  } else if (gameState === "won") {
-    gameState = "start";
+  } else if (state === "lost") {
+    state = "start";
+  } else if (state === "won") {
+    state = "start";
   }
 }
 
