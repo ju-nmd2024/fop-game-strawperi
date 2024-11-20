@@ -284,7 +284,7 @@ function draw() {
   if (state === "start") {
     backgroundEffects(x - 100, 0, swampX, swampY);
     startText(x - 60, 70, startX, startY);
-  } else if (State === "game") {
+  } else if (state === "game") {
     backgroundEffects(x - 100, 0, swampX, swampY);
 
     push();
