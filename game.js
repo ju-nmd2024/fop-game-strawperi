@@ -1,7 +1,7 @@
 background(255, 255, 255);
 let x = 100;
 let y = 100;
-let gameState = "lost";
+let gameState = "start";
 let direction = "forward";
 let gameActive = true;
 let manY = 0;
