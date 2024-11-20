@@ -16,8 +16,8 @@ let minAngle2 = -480;
 let maxAngle2 = -370;
 //for character movement
 let yVelocity = 0.1; // Character's vertical velocity
-let gravity = 0.5; // Gravity strength
-let jumpStrength = -0.8; // Initial jumping force
+let gravity = 0.3; // Gravity strength
+let jumpStrength = -1; // Initial jumping force
 let groundLevel = 700; // Ground position
 let jumpBoost = -5;
 //croc translation
@@ -348,8 +348,8 @@ function mousePressed() {
     maxAngle2 = -370;
     //for character movement
     yVelocity = 0.1; // Character's vertical velocity
-    gravity = 0.5; // Gravity strength
-    jumpStrength = -0.8; // Initial jumping force
+    gravity = 0.3; // Gravity strength
+    jumpStrength = -1; // Initial jumping force
     groundLevel = 700; // Ground position
     jumpBoost = -5;
   } else if (state === "lost") {
@@ -357,5 +357,8 @@ function mousePressed() {
   } else if (state === "won") {
     state = "start";
   }
+}
+
+
 }
 
